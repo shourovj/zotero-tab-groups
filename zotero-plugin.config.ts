@@ -39,6 +39,14 @@ export default defineConfig({
     ],
   },
 
+  release: {
+    // Publish the GitHub release (xpi + update.json) from the local machine
+    // too — the default "ci" only publishes inside GitHub Actions.
+    github: {
+      enable: "always",
+    },
+  },
+
   test: {
     waitForPlugin: `() => Zotero.${pkg.config.addonInstance}.data.initialized`,
   },
